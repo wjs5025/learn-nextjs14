@@ -1,6 +1,12 @@
-import Navigation from "../components/navgation";
+import { Metadata } from 'next';
+import Navigation from '../components/navgation';
 
-
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Next Movies',
+    default: 'Next Movies',
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
