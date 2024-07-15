@@ -1,9 +1,19 @@
-import Navigation from '../../components/navgation';
-
 export const metadata = {
-  title: 'Home',
-};
+  title : "Home",
+}
 
-export default function Page() {
-  return <h1>Hello Next</h1>;
+const URL = "https://nomad-movies.nomadcoders.workers.dev/movies"
+
+const getMovies = async () => {
+  const response= await fetch(URL)
+  const json = await response.json();
+  return json;
+}
+
+export default async function HomePage() {
+  const movies = await getMovies()
+  
+  return <h1>  
+          {JSON.stringify(movies)}
+        </h1>;
 }
